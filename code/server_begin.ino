@@ -120,7 +120,7 @@ void serveron() {
            json["apparent_power"] = sensor_CSE7766.getApparentPower();
            json["reactive_power"] = sensor_CSE7766.getReactivePower();
            json["power_factor"] = sensor_CSE7766.getPowerFactor();
-           json["energy"] = sensor_CSE7766.getEnergy()/ 1000000;
+           json["energy_kwh"] = sensor_CSE7766.getEnergy()/1000000;
            serializeJson(json, output);
            server.send(200, "text/json",output);
     }); 
