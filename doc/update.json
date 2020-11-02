@@ -1,5 +1,7 @@
 {
   "version_new": 0.01,
   "code_bin": "https://educible-classrooms.000webhostapp.com/sonoff-pow2/build/code.bin",
-  "fs_bin": "https://educible-classrooms.000webhostapp.com/sonoff-pow2/build/fs.bin"
+  "fs_bin": "https://educible-classrooms.000webhostapp.com/sonoff-pow2/build/fs.bin",
+  "esp8266_code_bin": "",
+  "esp8266_fs_bin": ""
 }
