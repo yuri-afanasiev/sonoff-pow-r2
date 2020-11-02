@@ -1,4 +1,5 @@
-# Прошивка для Sonoff Pow R2 
+# Прошивка для Sonoff Pow R2
+# AFYU 2.0
 
 ## [Документация](https://github.com/yuri-afanasiev/sonoff-pow-r2/wiki)
 ![15](https://raw.githubusercontent.com/yuri-afanasiev/sonoff-pow-r2/master/doc/15.jpeg)
@@ -18,17 +19,17 @@
 Последнюю версию прошивки можно скачать из папки [build](https://github.com/yuri-afanasiev/sonoff-pow-r2/tree/master/build)
 Как загрузить прошивку рассказано в виде [тут](https://youtu.be/BzPQeN5GVMM)
  ![12](https://raw.githubusercontent.com/yuri-afanasiev/sonoff-pow-r2/master/doc/12.png)
- ![3](https://raw.githubusercontent.com/yuri-afanasiev/sonoff-pow-r2/master/doc/3.png)
+ ![2.0_2](https://github.com/yuri-afanasiev/sonoff-pow-r2/raw/master/doc/2.0_2.jpg)
   
  
  
-После загрузки создастся точка доступа ESP8266 пароль 12345678 
+После загрузки создастся точка доступа AFYU_Setting пароль 12345678 
 На вкладке Настройки WIFI прописуем параметры доступа к wifi сети.Сохраняем и перезагружаем.
 
 Доступ к web интерфейсу 
 Username admin 
 Password admin
- ![11](https://raw.githubusercontent.com/yuri-afanasiev/sonoff-pow-r2/master/doc/11.png)
+ ![2.0_1](https://github.com/yuri-afanasiev/sonoff-pow-r2/raw/master/doc/2.0_1.jpg)
 
 В коде используется библиотека для  считывания данных CSE7766  [ingeniuske/CSE7766 Copyright (C) 2016-2018 by Xose Pérez Copyright (C) 2018 by Ingeniuske ](https://github.com/ingeniuske/CSE7766) 
 
