@@ -22,7 +22,7 @@
 Загрузка прошивки с помощью NodeMCU Flasher  https://github.com/nodemcu/nodemcu-flasher
 Скачать можно [тут](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win32/Release/ESP8266Flasher.exe)
 Последнюю версию прошивки можно скачать из папки [build](https://github.com/yuri-afanasiev/sonoff-pow-r2/tree/master/build)
-Как загрузить прошивку рассказано в виде [тут](https://youtu.be/BzPQeN5GVMM)
+
  ![12](https://raw.githubusercontent.com/yuri-afanasiev/sonoff-pow-r2/master/doc/12.png)
  ![2.0_2](https://github.com/yuri-afanasiev/sonoff-pow-r2/raw/master/doc/2.0_2.jpg)
   
