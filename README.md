@@ -19,21 +19,27 @@
 - Нужно отключить устройство от сети 220v
 - Загружать прошивку только от внешнего питания в 3.3v !!!
  
-Загрузка прошивки с помощью NodeMCU Flasher  https://github.com/nodemcu/nodemcu-flasher
-Скачать можно [тут](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win32/Release/ESP8266Flasher.exe)
-Последнюю версию прошивки можно скачать из папки [build](https://github.com/yuri-afanasiev/sonoff-pow-r2/tree/master/build)
+- ### Загрузка прошивки с помощью NodeMCU Flasher  https://github.com/nodemcu/nodemcu-flasher
+
+- ### Скачать можно [тут](https://github.com/nodemcu/nodemcu-flasher/blob/master/Win32/Release/ESP8266Flasher.exe)
+
+- ### Последнюю версию прошивки можно скачать из папки [build](https://github.com/yuri-afanasiev/sonoff-pow-r2/tree/master/build)
 
  ![12](https://raw.githubusercontent.com/yuri-afanasiev/sonoff-pow-r2/master/doc/12.png)
  ![2.0_2](https://github.com/yuri-afanasiev/sonoff-pow-r2/raw/master/doc/2.0_2.jpg)
   
  
  
-После загрузки создастся точка доступа AFYU_Setting пароль 12345678 
-На вкладке Настройки WIFI прописуем параметры доступа к wifi сети.Сохраняем и перезагружаем.
+- ### После загрузки создастся точка доступа AFYU_Setting Пароль 12345678 
 
-Доступ к web интерфейсу 
-Username admin 
-Password admin
+- ### На вкладке Настройки WIFI прописуем параметры доступа к wifi сети. Сохраняем и перезагружаем.
+
+- ### Доступ к web интерфейсу 
+
+#### Username admin 
+#### Password admin
+
+
  ![2.0_1](https://github.com/yuri-afanasiev/sonoff-pow-r2/raw/master/doc/2.0_1.jpg)
  
  ## Прошивки для других устройств:
