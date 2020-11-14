@@ -14,7 +14,7 @@
              url+= "&field6=";//power_factor   
              url+= sensor_CSE7766.getPowerFactor(); 
              url+= "&field7=";//energy   
-             url+= sensor_CSE7766.getEnergy()/ 1000000;  
+             url+= sensor_CSE7766.getEnergy()/ 100000;  
              url+= "&field8=";
              url+= relay_status;//relay status 
  
@@ -28,7 +28,6 @@
                                  }   
          client_thingspeak.stop();
 }
-
 void narodmon() {
      String output;
      DynamicJsonDocument  json(512);
@@ -79,12 +78,41 @@ void narodmon() {
         }   
      narodmon_client.stop();
 }
+void emoncms() {
+     String output;
+     DynamicJsonDocument  json(512);
+     json["voltage"] = sensor_CSE7766.getVoltage();
+     json["current"] = sensor_CSE7766.getCurrent();
+     json["active_power"] = sensor_CSE7766.getActivePower();
+     json["apparent_power"] = sensor_CSE7766.getApparentPower();
+     json["reactive_power"] = sensor_CSE7766.getReactivePower();
+     json["power_factor"] = sensor_CSE7766.getPowerFactor();
+     json["energy"] = sensor_CSE7766.getEnergy()/ 1000000;
+     serializeJson(json, output);
+     String   url=url_emoncms_server;
+              url += "?fulljson=";
+              url+=output;
+              url+="&apikey=";  
+              url+= api_key_emoncms;  
+              url+="&node=";  
+              url+= node_emoncms_server;
+     WiFiClient emoncms_server_client;
+     char **pointer, *stringVar;
+     unsigned long emoncms_server_http_port;
+     emoncms_server_http_port = strtoul(port_emoncms_server.c_str(),pointer,10);    
+     if (emoncms_server_client.connect(host_emoncms_server.c_str(),emoncms_server_http_port)) {
+         emoncms_server_client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+                                  "Host: " + host_emoncms_server + "\r\n" + 
+                                  "Connection: close\r\n\r\n"); 
+         } 
+     emoncms_server_client.stop(); 
+}
 void your_server() {
      String   url=url_your_server;
                  url += "?id=";
                  url+=ESP.getChipId();
                  url+= "&voltage=";  
-                 url+= sensor_CSE7766.getVoltage();;   
+                 url+= sensor_CSE7766.getVoltage();   
                  url+="&current=";
                  url+= sensor_CSE7766.getCurrent();  
                  url+="&=active_power"; 
