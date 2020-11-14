@@ -2,14 +2,17 @@
 ## [Документация](https://github.com/yuri-afanasiev/sonoff-pow-r2/wiki)
 - Код основан на системе [AFYU 2.0](https://github.com/yuri-afanasiev/AFYU)
 - Поддерживает Mesh  
-- Текущая версия 2.0
+- Текущая версия 2.1
 
 ![15](https://raw.githubusercontent.com/yuri-afanasiev/sonoff-pow-r2/master/doc/15.jpeg)
 
 ## Поддерживаемые сервисы: 
-- Narodmon 
-- Thingspeak 
+- [Narodmon] (http://narodmon.ru)
+- [Thingspeak] (https://thingspeak.com)
+- [Emoncms] (https://emoncms.org/)
 - Отправка данных на свой сервер 
+
+### Возможны неправильные данные по energy_kwh
 
 ## Установка
 !!! Логическое заземление устройства подключено к нейтральной линии сети 220V !!!
