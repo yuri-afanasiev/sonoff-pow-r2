@@ -10,17 +10,7 @@ void api28() {
      interval_time_your_server = server.arg("interval_time_your_server").toInt();//интервал между запросами 
      host_your_server = server.arg("host_your_server"); // host 
      port_your_server = server.arg("port_your_server");//  httpPort    
-     url_your_server = server.arg("url_your_server");//   url  
-
-     //emoncms
-     on_off_emoncms= server.arg("on_off_emoncms").toInt();//on 1/ off 0 emoncms
-     api_key_emoncms= server.arg("api_key_emoncms");//API Key emoncms
-     interval_time_emoncms= server.arg("interval_time_emoncms").toInt();//Интервал отправки emoncms
-     host_emoncms_server = server.arg("host_emoncms_server"); // host 
-     port_emoncms_server = server.arg("port_emoncms_server");//  httpPort    
-     url_emoncms_server = server.arg("url_emoncms_server");//    url 
-     node_emoncms_server = server.arg("node_emoncms_server");//  node  
-
+     url_your_server = server.arg("url_your_server");//   url   
       
      save28();//  запись в память модуля
      server.send(200, "text/json", "{\"status\":\"1\"}");  
@@ -52,19 +42,6 @@ void openfilehtm28() {
                port_your_server=port_your_server_test;
         String url_your_server_test= json["d10"];//
                url_your_server=url_your_server_test;  
-               
-               on_off_emoncms = json["d11"];//on 1/ off 0 emoncms 
-        String api_key_emoncms_test = json["d12"];//API Key emoncms
-               api_key_emoncms=api_key_emoncms_test;
-               interval_time_emoncms= json["d13"];//Интервал отправки emoncms
-        String host_emoncms_server_test= json["d14"];//host 
-               host_emoncms_server=host_emoncms_server_test; 
-        String port_emoncms_server_test= json["d15"];//httpPort
-               port_emoncms_server=port_emoncms_server_test;
-        String url_emoncms_server_test= json["d16"];//url 
-               url_emoncms_server=url_emoncms_server_test; 
-       String node_emoncms_server_test= json["d17"];//node 
-              node_emoncms_server=node_emoncms_server_test; 
 } 
 
 bool save28() {
@@ -81,15 +58,6 @@ bool save28() {
      json["d8"] = host_your_server;//  
      json["d9"] = port_your_server;// 
      json["d10"] = url_your_server;// 
-
-     json["d11"] = on_off_emoncms;//on 1/ off 0 emoncms 
-     json["d12"] = api_key_emoncms;//API Key emoncms 
-     json["d13"] = interval_time_emoncms;//Интервал отправки emoncms 
-     json["d14"] = host_emoncms_server;// host 
-     json["d15"] = port_emoncms_server;// httpPort  
-     json["d16"] = url_emoncms_server;//  url   
-     json["d17"] = node_emoncms_server;// node   
-     
      File configFile = SPIFFS.open("/htm28.json", "w");
      if (!configFile) {   
          return false;
@@ -113,14 +81,6 @@ void  htm28json(){
       json_web["port_your_server"] = port_your_server;
       json_web["url_your_server"] = url_your_server;
       json_web["macAddress"] = WiFi.macAddress();
-
-      json_web["on_off_emoncms"] = on_off_emoncms;//on 1/ off 0 emoncms
-      json_web["api_key_emoncms"] = api_key_emoncms;//API Key emoncms
-      json_web["interval_time_emoncms"] = interval_time_emoncms;//Интервал отправки emoncms
-      json_web["host_emoncms_server"] = host_emoncms_server;// host
-      json_web["port_emoncms_server"] = port_emoncms_server;// httpPort 
-      json_web["url_emoncms_server"] = url_emoncms_server;//   url 
-      json_web["node_emoncms_server"] = node_emoncms_server;// node 
       
       serializeJson(json_web, output);
       server.send(200, "text/json",output); 
@@ -134,9 +94,6 @@ void  narodmon_ticker_triggering(){
 void  your_server_ticker_triggering(){
       your_server_test=1;
 } 
-void  emoncms_ticker_triggering(){
-      emoncms_ticker_test=1;
-}  
 void  one_minute_ticker_triggering(){
       one_minute_test=1;
 }  

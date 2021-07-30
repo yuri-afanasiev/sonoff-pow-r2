@@ -11,10 +11,6 @@ void task_plan() {
          your_server();
          your_server_test=0;
         }
-     if (emoncms_ticker_test == 1){
-         emoncms(); 
-         emoncms_ticker_test=0;
-        }
      if (one_minute_test == 1){
          one_minute=0;
          one_minute_test=0;
