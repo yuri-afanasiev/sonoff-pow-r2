@@ -2,7 +2,7 @@
 ## [Документация](https://github.com/yuri-afanasiev/sonoff-pow-r2/wiki)
 - Код основан на системе [AFYU 2.0](https://github.com/yuri-afanasiev/AFYU)
 - Поддерживает Mesh  
-- Текущая версия 2.2
+- Текущая версия 2.21
 
 ![15](https://raw.githubusercontent.com/yuri-afanasiev/sonoff-pow-r2/master/doc/15.jpeg)
 
