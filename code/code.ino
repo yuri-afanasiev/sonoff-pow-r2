@@ -72,8 +72,10 @@ int on_off_your_server;
 int interval_time_your_server;
 String host_your_server, port_your_server, url_your_server;
 
+int on_off_emoncms,interval_time_emoncms;//emoncms
+String api_key_emoncms,host_emoncms_server,port_emoncms_server,url_emoncms_server,node_emoncms_server;//emoncms
 
-float rev_code = 2.2; //текущая версия кода
+float rev_code = 2.21; //текущая версия кода
 String device_name = "AFYU 2.0";
 #define device_mqtt "sonoff-pow2"//Название устройства
 #define pin_button 0  
@@ -109,6 +111,11 @@ Ticker your_server_ticker;
 int your_server_test;
 Ticker common_ticker;
 bool common_ticker_status;
+
+Ticker emoncms_ticker;
+int emoncms_ticker_test;
+
+
 Ticker ap_ticker;
 
 Ticker one_minute_ticker;
@@ -311,7 +318,7 @@ void callback(const MQTT::Publish& pub) {
          json["apparent_power"] = sensor_CSE7766.getApparentPower();
          json["reactive_power"] = sensor_CSE7766.getReactivePower();
          json["power_factor"] = sensor_CSE7766.getPowerFactor();
-         json["energy"] = sensor_CSE7766.getEnergy()/ 1000000;
+         json["energy"] = sensor_CSE7766.getEnergy()/1000000/4;
          serializeJson(json, output);
          mqttclient.publish(top3 + "/energy/status", output);
         }
@@ -438,10 +445,13 @@ void setup(void) {
      if (on_off_narodmon == 1) {
          narodmon_ticker.attach(interval_time_narodmon, narodmon_ticker_triggering);
         }
+     if (on_off_emoncms == 1) {
+         emoncms_ticker.attach(interval_time_emoncms, emoncms_ticker_triggering);
+        }
      if (on_off_your_server == 1) {
          your_server_ticker.attach(interval_time_your_server, your_server_ticker_triggering);
         }
-     one_minute_ticker.attach(60,one_minute_ticker_triggering);
+     //one_minute_ticker.attach(60,one_minute_ticker_triggering);
      top3 += "/home/" + mqw7 + "/" + mqw6 + "/" + device_mqtt; //уровень устройства
      top2 += "/home/" + mqw7 + "/" + device_mqtt; //уровень комнаты
      top1 += "/home/";//уровень дома
