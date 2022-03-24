@@ -7,7 +7,6 @@
 ![15](https://raw.githubusercontent.com/yuri-afanasiev/sonoff-pow-r2/master/doc/15.jpeg)
 
 ## Поддерживаемые сервисы: 
-- [Narodmon](http://narodmon.ru)
 - [Thingspeak](https://thingspeak.com)
 - [Emoncms](https://emoncms.org/)
 - [Отправка данных на свой сервер](https://github.com/yuri-afanasiev/sonoff-pow-r2/wiki/REST-API-Передача-данных#Свой-сервер) 
