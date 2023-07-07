@@ -3,9 +3,9 @@
                               Yuriy Afanasiev
                               
 YouTube  https://youtube.com/c/YuriyAfanasiev
+YouTube  https://youtube.com/@afyu
 GitHub   https://github.com/yuri-afanasiev/
-Telegram https://t.me/af_yu
-VK       https://vk.com/public126750524 
+
   
 Arduino IDE 1.8.10  https://www.arduino.cc/en/Main/Software          
 Arduino core for ESP8266 Версия 2.7.4 https://github.com/esp8266/Arduino {GNU Lesser General Public License v2.1} https://github.com/esp8266/Arduino/blob/master/LICENSE
